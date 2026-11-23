@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NASA Report RAG</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div>
+        <p class="eyebrow">Document intelligence</p>
+        <h1>NASA Human Space Exploration</h1>
+        <p class="subtitle">Ask questions grounded in Siddhant Kumar's 101-page report.</p>
+      </div>
+      <button id="reindexButton" class="secondary-button" type="button">Rebuild index</button>
+    </header>
+
+    <section class="chat-card" aria-label="Question and answer">
+      <div id="answerArea" class="answer-area">
+        <div class="empty-state">
+          <div class="orb">N</div>
+          <h2>Explore the report</h2>
+          <p>Try a question about the ISS, Artemis, Mars, astronaut health or spacewalks.</p>
+        </div>
+      </div>
+
+      <form id="questionForm" class="question-form">
+        <label for="question">Your question</label>
+        <div class="input-row">
+          <textarea id="question" name="question" rows="2"
+            placeholder="What are the main challenges for human missions to Mars?" required></textarea>
+          <button id="submitButton" type="submit">Ask</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="suggestions" aria-label="Suggested questions">
+      <button type="button" data-question="What is the main purpose of the Artemis program?">Artemis program</button>
+      <button type="button" data-question="How does the report describe living in space?">Living in space</button>
+      <button type="button" data-question="What are the major challenges of missions to Mars?">Mars challenges</button>
+      <button type="button" data-question="What training do astronauts receive?">Astronaut training</button>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
